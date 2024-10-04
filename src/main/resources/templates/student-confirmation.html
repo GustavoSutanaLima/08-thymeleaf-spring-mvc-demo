@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Confirmation</title>
+</head>
+<body>
+    <h3>Student Confirmation</h3>
+    <!-- no span, o Thymeleaf irá dar um getFirstName, getLastName e um getCountry-->
+    The student is confirmed: <span th:text="'O estudante: ' + ${student.firstName} + ' 
+    ' + ${student.lastName} + ' é do país ' + ${student.getCountry} + ' e ele adora programar 
+    em ' + ${student.favoriteProgramLanguage} + '!' "/>
+
+    <br><br>
+    Os Sistemas operacionais favoritos do <span th:text="${student.getFirstName}" /> são:
+    <ul>
+        <li th:each="OS_elementos : ${student.favoriteOperationalSystem}" th:text="${OS_elementos}" />
+    </ul>
+</body>
+</html>

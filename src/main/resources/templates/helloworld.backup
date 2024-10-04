@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- Declaração do tipo de documento HTML5 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- Início do documento HTML e definição do namespace do Thymeleaf -->
+
+    <head>
+        <!-- Cabeçalho do documento HTML -->
+        <meta charset="UTF-8">
+        <!-- Define a codificação de caracteres para UTF-8 -->
+        <title>Olá Mundo</title>
+        <!-- Título da página que será exibido na aba do navegador -->
+
+        <link rel="stylesheet" th:href="@{/css/demo.css}"/>
+        <!-- Link para o arquivo CSS. O atributo 'th:href' é processado pelo Thymeleaf para resolver o caminho do recurso -->
+    </head>
+
+    <body>
+        <!-- Corpo do documento HTML -->
+        <h1 th:text="'Olá mundo, agora são ' + ${theDate}" class="funny"></h1>
+        <!-- Cabeçalho de nível 1. O atributo 'th:text' é processado pelo Thymeleaf para inserir o texto dinâmico. 
+             'theDate' é uma variável passada pelo controlador Spring Boot. A classe 'funny' é usada para estilização. -->
+    </body>
+
+</html>
+<!-- Fim do documento HTML -->

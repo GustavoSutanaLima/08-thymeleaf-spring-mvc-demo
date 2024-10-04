@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- Declaração do tipo de documento HTML5 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- Início do documento HTML e definição do namespace do Thymeleaf -->
+
+    <head>
+        <!-- Cabeçalho do documento HTML -->
+        <meta charset="UTF-8">
+        <!-- Define a codificação de caracteres para UTF-8 -->
+        <title>Hello World - Input Form</title>
+        <!-- Título da página que será exibido na aba do navegador -->
+
+        <link rel="stylesheet" th:href="@{/css/demo.css}"/>
+        <!-- Link para o arquivo CSS. O atributo 'th:href' é processado pelo Thymeleaf para resolver o caminho do recurso -->
+    </head>
+
+    <body>
+        
+        <form th:action="@{/processFormVersionThree}" method="POST">
+            <!-- Formulário HTML. O atributo 'th:action' é processado pelo Thymeleaf para resolver a URL do formulário.
+                 O método GET é usado para enviar os dados do formulário. -->
+            <input 
+                type="text" name="studentName"
+                placeholder="What's your name?"/>
+            <!-- Campo de entrada de texto para o nome do estudante. O atributo 'name' define o nome do parâmetro que será enviado.
+                 O atributo 'placeholder' exibe um texto de sugestão dentro do campo de entrada. -->
+        
+            <!--<input type="submit" /> -->
+
+            <br>
+
+            <!-- Botão de envio do formulário -->
+                <input 
+                type="text" name="lastName"
+                placeholder="What's your last name?"/>
+            <!-- Campo de entrada de texto para o nome do estudante. O atributo 'name' define o nome do parâmetro que será enviado.
+                O atributo 'placeholder' exibe um texto de sugestão dentro do campo de entrada. -->
+            
+            <input type="submit" />
+            <!-- Botão de envio do formulário -->
+        </form>
+
+    </body>
+
+</html>
+<!-- Fim do documento HTML -->

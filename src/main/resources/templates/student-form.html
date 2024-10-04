@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <h3>Student Registration Form</h3>
+
+    <form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
+        <!-- Quando esse formulário for solicido, requisição GET pelo cliente (ver o @GetMapping do StudentController)
+         os campos input abairo irão rodar os respectivos métodos da classe Student: setFirstName e setLastName
+         quando o botão do tipo "subit" for relecionado e a requisição POST no end-point /processStudentForm, for chamada
+         as mesma linhas abaixo darão um get nos atributos do objeto defido no método da requisição GET passando então
+         os valores a cada um dos atributos firstName e lastName-->
+
+        First name: <input type="text" th:field="${student.firstName}" />
+
+        <br><br>
+        Last name: <input type ="text" th:field="${student.lastName}" />
+
+        <br><br>
+
+        <label for="country">Selecione um país:</label>
+        <select type="text" th:field="${student.country}">
+            <option th:each="country_element : ${countries_list}" th:value="${country_element}" th:text="${country_element}"></option>
+            <!-- th:each "country_element : ${countries_list}
+                    faz um for each basicamente entre os elementos da lista"-->
+        </select>
+
+        <br><br>
+
+        Escolha sua linguagem de programação:
+        <input type="radio" th:field="*{favoriteProgramLanguage}"
+                            th:each="programLanguage : ${programLanguage_list}" 
+                            th:value="${programLanguage}" 
+                            th:text="${programLanguage}" />
+         
+        
+        <br><br>
+
+        Escolha seu Sistema Operacional: 
+        <input type="checkbox" th:field="${student.favoriteOperationalSystem}"
+                               th:each="operationalSystem : ${operationalSystem_list}"
+                               th:value="${operationalSystem}"
+                               th:text="${operationalSystem}"/>
+        <br><br>
+        <input type="submit" value="Enviar!" />
+    </form>
+
+</body>
+</html>

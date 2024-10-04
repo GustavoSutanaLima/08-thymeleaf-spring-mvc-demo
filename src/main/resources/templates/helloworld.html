@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- Declaração do tipo de documento HTML5 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- Início do documento HTML e definição do namespace do Thymeleaf -->
+
+    <head>
+        <!-- Cabeçalho do documento HTML -->
+        <meta charset="UTF-8">
+        <!-- Define a codificação de caracteres para UTF-8 -->
+        <title>Olá Mundo</title>
+        <!-- Título da página que será exibido na aba do navegador -->
+
+        <link rel="stylesheet" th:href="@{/css/demo.css}"/>
+        <!-- Link para o arquivo CSS. O atributo 'th:href' é processado pelo Thymeleaf para resolver o caminho do recurso -->
+    </head>
+
+    <body class=funny>
+       Hello world Spring Boot!
+
+       <br><br>
+
+       Student name: <span th:text="${param.studentName}" />
+
+       <br><br>
+
+       The message: <span th:text="${message}" />  
+    </body>
+
+</html>
+<!-- Fim do documento HTML -->
